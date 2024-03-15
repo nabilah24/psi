@@ -21,6 +21,7 @@
 
     {{-- bootstrap icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    
 </head>
 
 <body>
@@ -39,23 +40,28 @@
             <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
+                        <a class="nav-link {{ 'home' == request()->path() ? 'active' : '' }}"
                             href="/">HOME<span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/about') ? 'active' : '' }}" href="/about">ABOUT<span></span></a>
+                        <a class="nav-link {{ 'about' == request()->path() ? 'active' : '' }}"
+                            href="/about">ABOUT<span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/menu') ? 'active' : '' }}" href="/menu">MENU<span></span></a>
+                        <a class="nav-link {{ 'menu' == request()->path() ? 'active' : '' }}"
+                            href="/menu">MENU<span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/contact') ? 'active' : '' }}" href="/contact">CONTACT<span></span></a>
+                        <a class="nav-link {{ 'contact' == request()->path() ? 'active' : '' }}"
+                            href="/contact">CONTACT<span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href=""><i class="bi bi-cart-fill"></i><span></span></a>
+                        <a class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" href=""><i
+                                class="bi bi-cart-fill"></i><span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href=""><i class="bi bi-person-circle"></i><span></span></a>
+                        <a class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" href=""><i
+                                class="bi bi-person-circle"></i><span></span></a>
                     </li>
                 </ul>
                 </li>
@@ -152,7 +158,7 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     {{-- jquery --}}
-    <script src="{{ asset('assets/js/jquery.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.js') }}"></script>
 
     {{-- custom js --}}
     <script src="{{ asset('assets/js/main.js') }}"></script>

@@ -716,6 +716,8 @@ nav.solid {
 .hero h1 {
     font-weight: 700;
     color: #ffffff;
+    font-size: 80px;
+    margin-top: 100px;
 }
 
 @media (min-width: 1400px) {
@@ -781,4 +783,164 @@ nav.solid {
     .hero .hero-img-wrap:after {
         top: -40px;
     }
+}
+
+/* menu */
+.nav-pills .nav-item i {
+    font-size: x-large;
+    color: var(--primary);
+}
+
+.nav-pills .nav-item i:hover,
+.nav-pills .nav-item i.active {
+    color: var(--dark);
+}
+
+.menu-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.menu-item-content {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.menu-item-content .menu-item-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item .menu-item-caption:hover {
+    opacity: 1;
+}
+
+.menu-item-content .menu-item-caption .menu-item-caption-content {
+    font-size: 1.5rem;
+}
+
+.menu-item-content .menu-item-caption .menu-item-caption-content .btn {
+    background-color: var(--primary);
+    border-radius: 100%;
+    width: 45px;
+    height: 45px;
+}
+
+.menu-item-content .menu-item-caption .menu-item-caption-content i {
+    color: var(--light);
+    font-size: 25px;
+}
+
+.menu-item-content .menu-item-caption .menu-item-caption-content i:hover {
+    color: var(--dark);
+}
+
+.card-body a {
+    color: var(--dark);
+}
+
+.card-body a:hover {
+    color: var(--primary);
+}
+
+.menu-list {
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.menu-list img {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.menu-list strong {
+    font-weight: 800 !important;
+    font-size: 20px !important;
+}
+
+.icon-chart {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    background: var(--dark);
+    bottom: 15px;
+    right: 0; /* Update posisi */
+    -webkit-transform: translateX(50%); /* Tambahkan translateX(50%) */
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+    margin-bottom: -17.5px;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.icon-chart i {
+    font-size: 50px;
+    color: var(--primary);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.menu-list:before {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    content: "";
+    background: #dce5e4;
+    height: 0%;
+    z-index: -1;
+    border-radius: 10px;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+
+.menu-list:hover {
+    left: -25px;
+}
+
+.menu-list:hover .icon-chart {
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-list:hover:before {
+    height: 70%;
 }

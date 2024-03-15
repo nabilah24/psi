@@ -5,10 +5,15 @@
     <div class="hero">
         <div class="container">
             <div class="row justify-content-between">
-
-                <div class="col-lg-6 text-center text-lg-start">
-                    <h1 class="display-3 animated slideInLeft">About</h1>
-                    <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A Table</a>
+                <div class="col-lg-5">
+                    <div class="intro-excerpt">
+                        <h1>About Us</h1>
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item text-decoration-none"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/menu">Menu</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                        </ol>
+                    </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="hero-img-wrap">

@@ -454,7 +454,7 @@
                         <div class="phone">
                             <i class="bi bi-phone"></i>
                             <h4>Call:</h4>
-                            <p>+62 </p>
+                            <p>+62 898-3550-049</p>
                         </div>
 
                     </div>
