@@ -59,12 +59,12 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="menu-item card rounded">
                                 <div class="position-relative bg-light overflow-hidden">
-                                    <div class="menu-item-content mx-auto" data-bs-toggle="modal"
-                                        data-bs-target="#menuModal">
+                                    <div class="menu-item-content mx-auto">
                                         <div
                                             class="menu-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                             <div class="menu-item-caption-content text-center text-white">
-                                                <a href="" class="btn"><i class="bi bi-eye-fill"></i></a>&nbsp
+                                                <a href="" class="btn" data-bs-toggle="modal"
+                                                    data-bs-target="#menuModal"><i class="bi bi-eye-fill"></i></a>&nbsp
                                                 <a href="" class="btn"><i class="bi bi-cart-fill"></i></a>
                                             </div>
                                         </div>
@@ -86,13 +86,14 @@
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <a href="" class="menu-thumbnail">
-                                <img src="{{ asset('assets/images/about/about-1.png') }}"
-                                    class="img-fluid rounded-start w-100" alt="...">
+                                    <img src="{{ asset('assets/images/about/about-1.png') }}"
+                                        class="img-fluid rounded-start w-100" alt="...">
                                 </a>
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-4">
-                                    <a href="" class="card-title d-block h1 mb-2 text-decoration-none"><b>Cimol</b></a>
+                                    <a href=""
+                                        class="card-title d-block h1 mb-2 text-decoration-none"><b>Cimol</b></a>
                                     <strong class="menu-price me-1">Rp 10.000,00</strong> <br><br>
                                     <h5 class="text-body">Deskripsi :</h5>
                                     <p class="card-text text-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -121,5 +122,42 @@
         </div>
     </div>
     {{-- menu end --}}
+@endsection
+
+{{-- menu-item-modals --}}
+<div class="menu-modal modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content" style="background: var(--light)">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pb-5">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <img src="{{ asset('assets/images/about/about-1.png') }}" alt=""
+                                class="img-fluid rounded mb-5" width="200px">
+                            <div class="text-center p-4">
+                                <a href="" class="d-block h3 mb-2 text-decoration-none"><b>Cimol</b></a>
+                                <span class="me-1">Rp 10.000,00</span>
+                            </div>
+                            <h5>Deskripsi :</h5>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+                                vitae neque cumque fuga rerum iste itaque rem sapiente harum, consectetur ea sequi
+                                inventore aliquam labore ab, maiores consequuntur quas similique quod cupiditate aut
+                                facilis natus delectus! Consequuntur reprehenderit nemo porro ab veniam delectus
+                                cupiditate, sit adipisci, ex alias eos error.</p>
+                            <a href=""
+                                class="btn btn-outline-primary align-items-center justify-content-center"><i
+                                    class="bi bi-cart-fill"></i>Add to Chart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- menu-item-modals --}}
+
 @section('scripts')
 @endsection

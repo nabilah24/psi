@@ -18,4 +18,7 @@ class AllController extends Controller
     public function contact(){
         return view('contact');
     }
+    public function adminMenu(){
+        return view('admin.menu.adminMenu');
+    }
 }
