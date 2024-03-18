@@ -110,7 +110,7 @@
                             <li class="sub-menu">
                                 <a href="">
                                     <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
-                                    <span class="list">Tables</span>
+                                    <span class="list">Login</span>
                                 </a>
                             </li>
                             <li class="sub-menu">
