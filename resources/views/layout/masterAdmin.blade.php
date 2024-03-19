@@ -25,7 +25,7 @@
 
 <body>
     <div class="wrapper">
-        <div class="top-navbar fixed-top">
+        <div class="top-navbar">
             <div class="logo">
                 <img src="{{ asset('assets/images/logo/nav-brand.png') }}" alt="" class="navbar-brand">
             </div>
@@ -77,58 +77,72 @@
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="main-body">
-                <div class="sidebar-menu">
-                    <div class="inner-sidebar-menu">
-                        <ul>
-                            <li class="sub-menu">
-                                <a href="">
-                                    <span class="icon"><i class="bi bi-tv"></i></span>
-                                    <span class="list">Dashboard</span>
-                                </a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="">
-                                    <span class="icon"><i class="bi bi-geo-alt-fill"
-                                            style="color: orangered"></i></span>
-                                    <span class="list">Maps</span>
-                                </a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="">
-                                    <span class="icon"><i class="bi bi-person-fill text-warning"></i></span>
-                                    <span class="list">User profile</span>
-                                </a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="">
-                                    <span class="icon"><i class="bi bi-list-ul text-danger"></i></span>
-                                    <span class="list">Tables</span>
-                                </a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="">
-                                    <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
-                                    <span class="list">Tables</span>
-                                </a>
-                            </li>
-                            <li class="sub-menu">
-                                <a href="">
-                                    <span class="icon"><i class="bi bi-person-circle"
-                                            style="color: palevioletred"></i></span>
-                                    <span class="list">Register</span>
-                                </a>
-                            </li>
-                        </ul>
+        <div class="main-body">
+            <div class="sidebar-menu">
+                <div class="inner-sidebar-menu">
+                    <ul>
+                        <li class="sub-menu">
+                            <a href="">
+                                <span class="icon"><i class="bi bi-tv"></i></span>
+                                <span class="list">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="">
+                                <span class="icon"><i class="bi bi-geo-alt-fill" style="color: orangered"></i></span>
+                                <span class="list">Maps</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="">
+                                <span class="icon"><i class="bi bi-person-fill text-warning"></i></span>
+                                <span class="list">User profile</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="">
+                                <span class="icon"><i class="bi bi-list-ul text-danger"></i></span>
+                                <span class="list">Tables</span>
+                            </a>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="">
+                                <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
+                                <span class="list">Tables</span>
+                                <i class="bi bi-caret-down-fill right"></i>
+                            </a>
+                            <ul>
+                                <li class="sub-menu">
+                                    <a href="">
+                                        <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
+                                        <span class="list">User</span>
+                                    </a>
+                                </li>
+                                <li class="sub-menu">
+                                    <a href="">
+                                        <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
+                                        <span class="list">Menu</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sub-menu">
+                            <a href="">
+                                <span class="icon"><i class="bi bi-person-circle"
+                                        style="color: palevioletred"></i></span>
+                                <span class="list">Register</span>
+                            </a>
+                        </li>
+                    </ul>
 
-                        <div class="hamburger">
-                            <div class="inner-hamburger">
-                                <span class="arrow">
-                                    <i class="bi bi-arrow-left-short"></i>
-                                    <i class="bi bi-arrow-right-short"></i>
-                                </span>
-                            </div>
+                    <div class="hamburger">
+                        <div class="inner-hamburger">
+                            <span class="arrow">
+                                <i class="bi bi-arrow-left-short"></i>
+                                <i class="bi bi-arrow-right-short"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -141,6 +155,17 @@
         $(document).ready(function() {
             $(".hamburger").click(function() {
                 $(".wrapper").toggleClass("active");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            $('.sub-menu ul').hide();
+            $(".sub-menu a").click(function(event) {
+                event.preventDefault(); // Mencegah tindakan default dari tautan
+                $(this).parent(".sub-menu").children("ul").slideToggle("100");
+                $(this).find(".right").toggleClass("bi-caret-up-fill bi-caret-down-fill");
             });
         });
     </script>
