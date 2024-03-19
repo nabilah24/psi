@@ -12,6 +12,10 @@
     {{-- custom css --}}
     <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
 
+    {{-- bootstrap css --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
     {{-- bootstrap icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
@@ -53,7 +57,7 @@
                 </a>
             </li>
             <li>
-                <a href="/User ">
+                <a href="/user ">
                     <i class='bx bxs-user-account'></i>
                     <span class="text">User Data</span>
                 </a>
