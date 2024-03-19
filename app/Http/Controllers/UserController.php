@@ -3,8 +3,96 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class UserController extends Controller
 {
-    //
+
+    public function register()
+    {
+        return view('register');
+    }
+
+    public function register_action(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|max:20',
+            'username' => 'required|min:6|max:20|unique:users',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required|string|min:12|max:13',
+            'password' => 'required|min:6|max:8'
+        ]);
+
+        $user = new User([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'password' => Hash::make($request->password),
+            'is_admin' => $request->is_admin ?? 0,
+        ]);
+
+        $user->save();
+
+        return redirect()->route('login');
+    }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function login_action(Request $request)
+    {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+            if (auth()->user()->is_admin == 1) {
+                return redirect()->intended('/musik');
+            } else {
+                return redirect()->intended('/home');
+            }
+        }
+
+        return back()->withErrors('Invalid username or password.');
+    }
+
+    // //register
+    // public function store(Request $request){
+    //     $validatedData = $request->validate([
+    //         'name' => 'required|max:20',
+    //         'username' => 'required|min:6|max:20|unique:users',
+    //         'email' => 'required|email|unique:users',
+    //         'phone' => 'required|string|min:12|max:13',
+    //         'password' => 'required|min:6|max:8'
+    //     ]);
+    //     User::create($validatedData);
+
+    //     // $request->session()->flash('success', 'Daftar Akun Berhasil!! Selanjutnya Login');
+
+    //     return redirect('/login')->with('success', 'Daftar Akun Berhasil!! Selanjutnya Login');
+    // }
+
+    // //login
+    // public function authenticate(Request $request)
+    // {
+    //     $credentials = $request->validate([
+    //         'email' => 'required|email:dns',
+    //         'password' => 'required'
+    //     ]);
+
+    //     if(Auth::attempt($credentials)){
+    //         $request->session()->regenerate();
+    //         return redirect()->intended('/home');
+    //     }
+    //     return back()->with('LoginError', 'Login failed');
+    // }
+
 }

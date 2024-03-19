@@ -21,4 +21,7 @@ class AllController extends Controller
     public function adminMenu(){
         return view('admin.menu.adminMenu');
     }
+    public function index(){
+        return view('index');
+    }
 }
