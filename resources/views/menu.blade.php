@@ -7,12 +7,10 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>Contact Us</h1>
+                        <h1>Our Menu</h1>
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item text-decoration-none"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item"><a href="/about">About</a></li>
                             <li class="breadcrumb-item"><a href="/menu">Menu</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
                         </ol>
                     </div>
                 </div>
@@ -64,13 +62,12 @@
                                             <div
                                                 class="menu-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                                 <div class="menu-item-caption-content text-center text-white">
-                                                    <a href="" class="btn" data-bs-toggle="modal"
-                                                        data-bs-target="#menuModal"><i class="bi bi-eye-fill"></i></a>&nbsp
+                                                    <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#menuModal{{ $menu->id }}"><i class="bi bi-eye-fill"></i></a>&nbsp
                                                     <a href="{{ route('addmenu.to.cart', $menu->id) }}" class="btn"><i
                                                             class="bi bi-cart-fill"></i></a>
                                                 </div>
                                             </div>
-                                            <img class="img-card-top img-fluid"
+                                            <img class="img-card-top img-fluid" style="min-height: 250px"
                                                 src="{{ asset('/storage/gambar/' . $menu->gambar) }}" alt="...">
                                         </div>
                                         <div class="card-body text-center p-4">
@@ -104,7 +101,7 @@
                                     </div>
                                 </div>
                                 <span class="icon-chart">
-                                    <a href="{{ route('addmenu.to.cart') }}"><i class="bi bi-cart-fill"></i></a>
+                                    <a href="{{ route('addmenu.to.cart', $menu->id) }}"><i class="bi bi-cart-fill"></i></a>
                                 </span>
                             @endforeach
                         </div>
@@ -117,11 +114,11 @@
         </div>
     </div>
     {{-- menu end --}}
-@endsection
+
 
 {{-- menu-item-modals --}}
 @foreach ($menus as $menu)
-<div class="menu-modal modal fade" id="menuModal{{ $menu->id }}" tabindex="-1" aria-labelledby="menuModal {{ $menu->id }}" aria-hidden="true">
+<div class="menu-modal modal fade" id="menuModal{{ $menu->id }}" tabindex="-1" aria-labelledby="menuModal{{ $menu->id }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content" style="background: var(--light)">
             <div class="modal-header border-0">
@@ -135,11 +132,11 @@
                                 class="img-fluid rounded mb-5" width="200px">
                             <div class="text-center p-4">
                                 <a href="" class="d-block h3 mb-2 text-decoration-none"><b>Cimol</b></a>
-                                <span class="me-1">Rp {{ $menu->harg a}}</span>
+                                <span class="me-1">Rp {{ $menu->harga}}</span>
                             </div>
                             <h5>Deskripsi :</h5>
                             <p class="mb-4">{{ $menu->deskripsi }}</p>
-                            <a href="{{ route('addmenu.to.cart' )}}"
+                            <a href="{{ route('addmenu.to.cart', $menu->id )}}"
                                 class="btn btn-outline-primary align-items-center justify-content-center"><i
                                     class="bi bi-cart-fill"></i>Add to Chart</a>
                         </div>
@@ -149,7 +146,7 @@
         </div>
     </div>
 </div>
+@endforeach
 {{-- menu-item-modals --}}
 
-@section('scripts')
-@endsection
+{{-- @endsection --}}

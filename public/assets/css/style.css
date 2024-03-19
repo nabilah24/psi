@@ -99,7 +99,7 @@ nav.solid {
 
 .nav-link {
     position: relative;
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: var(--primary);
     font-weight: 600;
     text-decoration: none;
@@ -111,6 +111,23 @@ nav.solid {
 
 .nav-link:hover {
     color: var(--white);
+}
+
+.nav-link .num {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    background: var(--dark);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* section-title */

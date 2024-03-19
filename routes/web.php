@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MenuController;
-use app\Http\Controllers\CartController;
+use App\Http\Controllers\CartController;
 use App\Models\All;
 use App\Models\Login;
 use App\Models\Menu;

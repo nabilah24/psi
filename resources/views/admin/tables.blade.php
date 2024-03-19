@@ -37,7 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($users as $user)
+                        {{-- @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->nama }}</td>
                                 <td>{{ $user->username }}</td>
@@ -47,7 +47,7 @@
                                 <td>{{ $user->created_at}}</td>
                                 <td>{{ $user->updated_at}}</td>
                             </tr>
-                        @endforeach
+                        @endforeach --}}
                     </tbody>
                 </table>
             </div>

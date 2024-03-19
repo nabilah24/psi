@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Menu;
+use App\Models\Menu;
 
 class CartController extends Controller
 {

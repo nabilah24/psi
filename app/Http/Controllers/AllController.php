@@ -30,7 +30,7 @@ class AllController extends Controller
         $menus = Menu::all(); // Assuming you want to fetch all menus
 
         // Pass menus and users data to the view
-        return view('admin.tables', compact('menus'));
+        return view('menu', compact('menus'));
     }
 
     public function contact()
@@ -62,7 +62,7 @@ class AllController extends Controller
         $users = User::all(); // Assuming you want to fetch all users
 
         // Pass menus and users data to the view
-        return view('admin.tables', compact('menus', 'users'));
+        return view('menu', compact('users', 'menus'));
     }
 
     public function maps()
