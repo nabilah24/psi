@@ -79,63 +79,49 @@
             </div>
         </div>
 
-        <div class="main-body">
-            <div class="sidebar-menu">
-                <div class="inner-sidebar-menu">
-                    <ul>
-                        <li class="sub-menu">
-                            <a href="">
-                                <span class="icon"><i class="bi bi-tv"></i></span>
-                                <span class="list">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="">
-                                <span class="icon"><i class="bi bi-geo-alt-fill" style="color: orangered"></i></span>
-                                <span class="list">Maps</span>
-                            </a>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="">
-                                <span class="icon"><i class="bi bi-person-fill text-warning"></i></span>
-                                <span class="list">User profile</span>
-                            </a>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="">
-                                <span class="icon"><i class="bi bi-list-ul text-danger"></i></span>
-                                <span class="list">Tables</span>
-                            </a>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="">
-                                <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
-                                <span class="list">Tables</span>
-                                <i class="bi bi-caret-down-fill right"></i>
-                            </a>
-                            <ul>
-                                <li class="sub-menu">
-                                    <a href="">
-                                        <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
-                                        <span class="list">User</span>
-                                    </a>
-                                </li>
-                                <li class="sub-menu">
-                                    <a href="">
-                                        <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
-                                        <span class="list">Menu</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="">
-                                <span class="icon"><i class="bi bi-person-circle"
-                                        style="color: palevioletred"></i></span>
-                                <span class="list">Register</span>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="main-body">
+                <div class="sidebar-menu">
+                    <div class="inner-sidebar-menu">
+                        <ul>
+                            <li class="sub-menu">
+                                <a href="">
+                                    <span class="icon"><i class="bi bi-tv"></i></span>
+                                    <span class="list">Dashboard</span>
+                                </a>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="">
+                                    <span class="icon"><i class="bi bi-geo-alt-fill"
+                                            style="color: orangered"></i></span>
+                                    <span class="list">Maps</span>
+                                </a>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="">
+                                    <span class="icon"><i class="bi bi-person-fill text-warning"></i></span>
+                                    <span class="list">User profile</span>
+                                </a>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="">
+                                    <span class="icon"><i class="bi bi-list-ul text-danger"></i></span>
+                                    <span class="list">Tables</span>
+                                </a>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="">
+                                    <span class="icon"><i class="bi bi-house-lock-fill text-info"></i></span>
+                                    <span class="list">Tables</span>
+                                </a>
+                            </li>
+                            <li class="sub-menu">
+                                <a href="">
+                                    <span class="icon"><i class="bi bi-person-circle"
+                                            style="color: palevioletred"></i></span>
+                                    <span class="list">Register</span>
+                                </a>
+                            </li>
+                        </ul>
 
                     <div class="hamburger">
                         <div class="inner-hamburger">

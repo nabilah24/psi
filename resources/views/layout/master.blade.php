@@ -21,7 +21,7 @@
 
     {{-- bootstrap icon --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    
+
 </head>
 
 <body>
@@ -59,9 +59,16 @@
                         <a class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" href=""><i
                                 class="bi bi-cart-fill"></i><span></span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" href=""><i
-                                class="bi bi-person-circle"></i><span></span></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link {{ 'tutorial/bhsisyarat' == request()->path() || 'tutorial/musik' == request()->path() || 'tutorial/tari' == request()->path() || 'tutorial/gambar' == request()->path() ? 'active' : '' }}"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i><span></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item {{ 'register' == request()->path() ? 'active' : '' }}"
+                                    href="{{ url('register') }}">DAFTAR</span></a></li>
+                            <li><a class="dropdown-item {{ 'login' == request()->path() ? 'active' : '' }}"
+                                    href="{{ url('login') }}">MASUK<span></span></a></li>
                     </li>
                 </ul>
                 </li>
