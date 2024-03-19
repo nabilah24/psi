@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
-                    <h1 class="text-header">Data Flashcard</h1>
+                    <h1 class="text-header">Data Menu</h1>
                 </div>
                 <div class="col-lg-2">
                     <a href="{{ route('adminMenu.create') }}" class="btn btn-primary" title="Tambah Item">

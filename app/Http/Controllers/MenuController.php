@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-/**
+    /**
      * Display a listing of the resource.
      */
     public function index()
@@ -82,7 +82,7 @@ class MenuController extends Controller
             'nama_item' => 'required',
             'harga' => 'required',
             'stok' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'deskripsi' => 'required'
         ]);
 
@@ -104,6 +104,7 @@ class MenuController extends Controller
         return redirect()->route('adminMenu.index')
             ->with('success', 'Menu berhasil diperbarui.');
     }
+
 
     /**
      * Remove the specified resource from storage.

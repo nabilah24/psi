@@ -15,15 +15,10 @@ Route::get('/menu', [AllController::class, 'menu']);
 Route::get('/contact', [AllController::class, 'contact']);
 
 // crud webAdmin
-<<<<<<< HEAD
 // Route::get('/adminMenu', [AllController::class, 'adminMenu']);
 Route::resource('/adminMenu', MenuController::class);
-=======
-Route::get('/adminMenu', [AllController::class, 'adminMenu']);
-// Route::resource('/adminMenu', MenuController::class);
+
 
 // login
-Route::get('/login', [LoginController::class, 'login']);
-Route::post('/login', [LoginController::class, 'authenticate']);
-
->>>>>>> fe94aacb47cbd17c0d685dd375988e8f2c49c565
+// Route::get('/login', [LoginController::class, 'login']);
+// Route::post('/login', [LoginController::class, 'authenticate']);
