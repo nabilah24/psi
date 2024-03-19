@@ -18,7 +18,10 @@ Route::get('/menu', [AllController::class, 'menu']);
 Route::get('/contact', [AllController::class, 'contact']);
 
 // crud webAdmin
-// Route::get('/adminMenu', [AllController::class, 'adminMenu']);
+Route::get('/dashboard', [AllController::class, 'dashboard']);
+Route::get('/user', [AllController::class, 'user']);
+Route::get('/tables', [AllController::class, 'tables']);
+Route::get('/maps', [AllController::class, 'maps']);
 Route::resource('/adminMenu', MenuController::class);
 
 

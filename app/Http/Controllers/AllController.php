@@ -24,4 +24,18 @@ class AllController extends Controller
     public function index(){
         return view('index');
     }
+    
+    public function dashboard(){
+        return view('admin.dashboard');
+    }
+    public function user(){
+        return view('admin.user.user');
+    }
+    public function tables(){
+        return view('admin.tables');
+    }
+    public function maps(){
+        return view('admin.maps');
+
+    }
 }
