@@ -38,7 +38,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect()->route('login');
+        return redirect('/login')->with('success', 'Daftar Akun Berhasil!! Selanjutnya Login');
     }
 
     public function login()
@@ -49,11 +49,15 @@ class UserController extends Controller
     public function login_action(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'email' => 'required',
             'password' => 'required',
+        ],
+        [
+            'email.required' => 'Email Wajib Diisi',
+            'password.required' => 'Password Wajib Diisi',
         ]);
 
-        if (Auth::attempt(['username' => $request->username, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
             if (auth()->user()->is_admin == 1) {
                 return redirect()->intended('/musik');
             } else {
