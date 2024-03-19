@@ -45,23 +45,19 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ 'about' == request()->path() ? 'active' : '' }}"
-                            href="/about">ABOUT<span></span></a>
+                            href="/login">ABOUT<span></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ 'menu' == request()->path() ? 'active' : '' }}"
-                            href="/menu">MENU<span></span></a>
+                            href="/login">MENU<span></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ 'contact' == request()->path() ? 'active' : '' }}"
-                            href="/contact">CONTACT<span></span></a>
+                            href="/login">CONTACT<span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ '' == request()->path() ? 'active' : '' }}" href="{{ route('shopping.cart') }}"><i
+                        <a class="nav-link {{ '/login' == request()->path() ? 'active' : '' }}" href=""><i
                                 class="bi bi-cart-fill"></i><span></span></a>
-                                <a href="#" class="notification">
-                                    <i class='bx bxs-bell' ></i>
-                                    <span class="num">8</span>
-                                </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link {{ 'tutorial/bhsisyarat' == request()->path() || 'tutorial/musik' == request()->path() || 'tutorial/tari' == request()->path() || 'tutorial/gambar' == request()->path() ? 'active' : '' }}"
@@ -69,10 +65,10 @@
                             <i class="bi bi-person-circle"></i><span></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{ '/' == request()->path() ? 'active' : '' }}"
-                                    href="{{ url('/') }}">Profil</span></a></li>
-                            <li><a class="dropdown-item {{ '/' == request()->path() ? 'active' : '' }}"
-                                    href="{{ url('/') }}">Logout<span></span></a></li>
+                            <li><a class="dropdown-item {{ 'register' == request()->path() ? 'active' : '' }}"
+                                    href="{{ url('register') }}">DAFTAR</span></a></li>
+                            <li><a class="dropdown-item {{ 'login' == request()->path() ? 'active' : '' }}"
+                                    href="{{ url('login') }}">MASUK<span></span></a></li>
                     </li>
                 </ul>
                 </li>

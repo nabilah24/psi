@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use App\Models\Menu;
+use App\Models\User;
 
 class AllController extends Controller
 {
+    public function index()
+    {
+        return view('index');
+    }
     public function home()
     {
         return view('home');
@@ -21,7 +26,11 @@ class AllController extends Controller
 
     public function menu()
     {
-        return view('menu');
+        // Fetch menus from the database
+        $menus = Menu::all(); // Assuming you want to fetch all menus
+
+        // Pass menus and users data to the view
+        return view('admin.tables', compact('menus'));
     }
 
     public function contact()
@@ -49,12 +58,24 @@ class AllController extends Controller
         // Fetch menus from the database
         $menus = Menu::all(); // Assuming you want to fetch all menus
 
-        // Pass menus data to the view
-        return view('admin.tables', compact('menus'));
+        // Fetch users from the database
+        $users = User::all(); // Assuming you want to fetch all users
+
+        // Pass menus and users data to the view
+        return view('admin.tables', compact('menus', 'users'));
     }
 
     public function maps()
     {
         return view('admin.maps');
+    }
+
+    public function userProfile()
+    {
+        // Fetch users from the database
+        $users = User::all(); // Assuming you want to fetch all users
+
+        // Pass menus and users data to the view
+        return view('admin.user.userProfile', compact('users'));
     }
 }

@@ -27,42 +27,42 @@
 <body>
     {{-- sidebar --}}
     <section id="sidebar">
-        <a href="#" class="brand">
+        <a href="/" class="brand">
             <img src="{{ asset('assets/images/logo/brand.png') }}" alt="">
             <span class="text">Cimal Cimol!</span>
         </a>
         <ul class="side-menu top">
-            <li class="active">
-                <a href="/dashboard">
+            <li class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                <a href="/dashboard" ">
                     <i class='bx bxs-dashboard'></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('admin.maps') ? 'active' : '' }}">
                 <a href="/maps">
                     <i class='bx bxs-map'></i>
                     <span class="text">Maps</span>
                 </a>
             </li>
-            <li>
-                <a href="/user-profile">
+            <li class="{{ request()->routeIs('admin.userProfile') ? 'active' : '' }}">
+                <a href="/userProfile">
                     <i class='bx bxs-user-detail'></i>
                     <span class="text">User Profile</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('admin.tables') ? 'active' : '' }}">
                 <a href="/tables">
                     <i class='bx bx-list-ul'></i>
                     <span class="text">Tables</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('admin.user') ? 'active' : '' }}">
                 <a href="/user ">
                     <i class='bx bxs-user-account'></i>
                     <span class="text">User Data</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->routeIs('adminMenu.index') || request()->routeIs('adminMenu.edit') || request()->routeIs('adminMenu.show') || request()->routeIs('adminMenu.create') ? 'active' : '' }}">
                 <a href="/adminMenu">
                     <i class='bx bxs-food-menu' ></i>
                     <span class="text">Menu List</span>
@@ -91,7 +91,7 @@
         {{-- navbar --}}
         <nav>
             <i class='bx bx-menu'></i>
-            <a href="/" class="nav-link">Home</a>
+            <a href="/home" class="nav-link">Home</a>
             <form action="#">
                 <div class="form-input">
                     <input type="search" placeholder="Search...">
@@ -100,15 +100,11 @@
             </form>
             <input type="checkbox" id="switch-mode" hidden>
             <label for="switch-mode" class="switch-mode"></label>
-            <a href="#" class="notification">
-                <i class='bx bxs-bell'></i>
-                <span class="num">8</span>
-            </a>
             <div class="profile">
-                <img src="{{ asset('assets/images/user/admin.jpg') }}">
+                <img src="{{ asset('assets/images/user/agent.jpg') }}">
             </div>
-            <a href="/user-profile" class="user">
-                {{-- {{ auth()->user()->name }} --}}Afif Ilham Hamdani
+            <a href="/userProfile" class="user">
+                {{-- {{ auth()->user()->name }} --}}Admin
             </a>
         </nav>
         {{-- navbar end --}}
