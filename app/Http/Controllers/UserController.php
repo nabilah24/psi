@@ -57,46 +57,30 @@ class UserController extends Controller
             'password.required' => 'Password Wajib Diisi',
         ]);
 
-        if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
-            if (auth()->user()->is_admin == 1) {
-                return redirect()->intended('/musik');
-            } else {
-                return redirect()->intended('/home');
+        $infologin = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+
+        if(Auth::attempt($infologin)){
+            if(Auth::user()->role =='admin'){
+                return redirect('admin.menu');
+            } elseif (Auth::user()->role == 'user'){
+                return redirect('home');
             }
+        }else{
+            return redirect('')->withErrors('Username Atau Password Yang Dimasukkan Tidak Sesuai')->withInput();
         }
 
-        return back()->withErrors('Invalid username or password.');
+        // if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
+        //     if (auth()->user()->is_admin == 1) {
+        //         return redirect()->intended('/musik');
+        //     } else {
+        //         return redirect()->intended('/home');
+        //     }
+        // }
+
+        // return back()->withErrors('Invalid username or password.');
     }
-
-    // //register
-    // public function store(Request $request){
-    //     $validatedData = $request->validate([
-    //         'name' => 'required|max:20',
-    //         'username' => 'required|min:6|max:20|unique:users',
-    //         'email' => 'required|email|unique:users',
-    //         'phone' => 'required|string|min:12|max:13',
-    //         'password' => 'required|min:6|max:8'
-    //     ]);
-    //     User::create($validatedData);
-
-    //     // $request->session()->flash('success', 'Daftar Akun Berhasil!! Selanjutnya Login');
-
-    //     return redirect('/login')->with('success', 'Daftar Akun Berhasil!! Selanjutnya Login');
-    // }
-
-    // //login
-    // public function authenticate(Request $request)
-    // {
-    //     $credentials = $request->validate([
-    //         'email' => 'required|email:dns',
-    //         'password' => 'required'
-    //     ]);
-
-    //     if(Auth::attempt($credentials)){
-    //         $request->session()->regenerate();
-    //         return redirect()->intended('/home');
-    //     }
-    //     return back()->with('LoginError', 'Login failed');
-    // }
 
 }
