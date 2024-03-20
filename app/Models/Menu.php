@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
+
     protected $guarded = [];
 
     protected $fillable = [
@@ -20,7 +21,8 @@ class Menu extends Model
 
     public function getPathAttribute()
     {
-        $url = 'storage/gambar/' . $this->gambar;
+        $url = 'storage/gambar/'.$this->gambar;
+
         return $url;
     }
 }

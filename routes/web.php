@@ -1,14 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CartController;
-use App\Models\All;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\UserController;
 use App\Models\Login;
-use App\Models\Menu;
-use App\Models\User;
+use Illuminate\Support\Facades\Route;
 
 // web utama
 Route::get('/', [AllController::class, 'index']);
@@ -31,9 +28,7 @@ Route::get('/tables', [AllController::class, 'tables'])->name('admin.tables');
 Route::get('/maps', [AllController::class, 'maps'])->name('admin.maps');
 Route::get('/userProfile', [AllController::class, 'userProfile'])->name('admin.userProfile');
 
-
 Route::resource('/adminMenu', MenuController::class);
-
 
 // login
 Route::get('/login', [UserController::class, 'login']);

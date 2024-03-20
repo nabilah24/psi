@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\MenuController;
-use App\Http\Controllers\UserController;
 use App\Models\Menu;
 use App\Models\User;
 
@@ -14,6 +11,7 @@ class AllController extends Controller
     {
         return view('index');
     }
+
     public function home()
     {
         return view('home');

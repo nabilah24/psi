@@ -36,7 +36,7 @@ class MenuController extends Controller
             'harga' => 'required',
             'stok' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
         ]);
 
         $input = $request->all();
@@ -44,7 +44,7 @@ class MenuController extends Controller
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar');
             $destinationPath = 'storage/gambar';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = $profileImage;
         }
@@ -61,6 +61,7 @@ class MenuController extends Controller
     public function show($id)
     {
         $menus = Menu::findOrFail($id);
+
         return view('admin.menu.adminMenu-show', compact('menus'));
     }
 
@@ -70,6 +71,7 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menus = Menu::findOrFail($id);
+
         return view('admin.menu.adminMenu-edit', compact('menus'));
     }
 
@@ -83,7 +85,7 @@ class MenuController extends Controller
             'harga' => 'required',
             'stok' => 'required',
             'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'deskripsi' => 'required'
+            'deskripsi' => 'required',
         ]);
 
         $input = $request->all();
@@ -92,7 +94,7 @@ class MenuController extends Controller
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar');
             $destinationPath = 'storage/gambar';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $profileImage = date('YmdHis').'.'.$image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['gambar'] = $profileImage;
         } else {
@@ -104,7 +106,6 @@ class MenuController extends Controller
         return redirect()->route('adminMenu.index')
             ->with('success', 'Menu berhasil diperbarui.');
     }
-
 
     /**
      * Remove the specified resource from storage.

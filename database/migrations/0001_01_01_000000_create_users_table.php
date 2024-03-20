@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->string('name')->nullable();
             $table->string('username')->unique();
-            $table->enum('role',['admin','user'])->default('user');
+            $table->enum('role', ['admin', 'user'])->default('user');
             $table->string('email')->unique();
             $table->string('phone')->nullable();
             $table->timestamp('email_verified_at')->nullable();

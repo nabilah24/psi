@@ -36,6 +36,7 @@
                         </form>
                     </div>
                 </div>
+
                 <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
                     <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
                         <li class="nav-item me-2">
@@ -51,6 +52,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
@@ -81,6 +83,7 @@
                         @endforeach
                     </div>
                 </div>
+
                 <div id="tab-2" class="tab-pane fade show p-0">
                     <div class="card mb-3 menu-list" style="max-width: 100%;">
                         <div class="row g-0">
@@ -115,38 +118,37 @@
     </div>
     {{-- menu end --}}
 
-
-{{-- menu-item-modals --}}
-@foreach ($menus as $menu)
-<div class="menu-modal modal fade" id="menuModal{{ $menu->id }}" tabindex="-1" aria-labelledby="menuModal{{ $menu->id }}" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content" style="background: var(--light)">
-            <div class="modal-header border-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center pb-5">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6">
-                            <img src="{{ asset('/storage/gambar/' . $menu->gambar) }}" alt=""
-                                class="img-fluid rounded mb-5" width="200px">
-                            <div class="text-center p-4">
-                                <a href="" class="d-block h3 mb-2 text-decoration-none"><b>Cimol</b></a>
-                                <span class="me-1">Rp {{ $menu->harga}}</span>
+    {{-- menu-item-modals --}}
+    @foreach ($menus as $menu)
+    <div class="menu-modal modal fade" id="menuModal{{ $menu->id }}" tabindex="-1" aria-labelledby="menuModal{{ $menu->id }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content" style="background: var(--light)">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <img src="{{ asset('/storage/gambar/' . $menu->gambar) }}" alt=""
+                                    class="img-fluid rounded mb-5" width="200px">
+                                <div class="text-center p-4">
+                                    <a href="" class="d-block h3 mb-2 text-decoration-none"><b>Cimol</b></a>
+                                    <span class="me-1">Rp {{ $menu->harga}}</span>
+                                </div>
+                                <h5>Deskripsi :</h5>
+                                <p class="mb-4">{{ $menu->deskripsi }}</p>
+                                <a href="{{ route('addmenu.to.cart', $menu->id )}}"
+                                    class="btn btn-outline-primary align-items-center justify-content-center"><i
+                                        class="bi bi-cart-fill"></i>Add to Chart</a>
                             </div>
-                            <h5>Deskripsi :</h5>
-                            <p class="mb-4">{{ $menu->deskripsi }}</p>
-                            <a href="{{ route('addmenu.to.cart', $menu->id )}}"
-                                class="btn btn-outline-primary align-items-center justify-content-center"><i
-                                    class="bi bi-cart-fill"></i>Add to Chart</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endforeach
-{{-- menu-item-modals --}}
+    @endforeach
+    {{-- menu-item-modals --}}
 
-{{-- @endsection --}}
+@endsection
