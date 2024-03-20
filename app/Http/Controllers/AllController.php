@@ -62,7 +62,7 @@ class AllController extends Controller
         $users = User::all(); // Assuming you want to fetch all users
 
         // Pass menus and users data to the view
-        return view('menu', compact('users', 'menus'));
+        return view('admin.tables', compact('users', 'menus'));
     }
 
     public function maps()
