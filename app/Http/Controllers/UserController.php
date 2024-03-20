@@ -72,6 +72,8 @@ class UserController extends Controller
             return redirect('')->withErrors('Username Atau Password Yang Dimasukkan Tidak Sesuai')->withInput();
         }
 
+
+
         // if (Auth::attempt(['email' => $request->username, 'password' => $request->password])) {
         //     if (auth()->user()->is_admin == 1) {
         //         return redirect()->intended('/musik');

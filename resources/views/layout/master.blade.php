@@ -56,8 +56,8 @@
                             href="/contact">CONTACT<span></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ '/' == request()->path() ? 'active' : '' }}" href=""><i
-                                class="bi bi-cart-fill"></i><span></span></a>
+                        <a class="nav-link {{ '/shopping-cart' == request()->path() ? 'active' : '' }}" href="{{ route('shopping.cart') }}"><i
+                                class="bi bi-cart-fill"></i><span class="num">{{ count((array) session('cart')) }}</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link {{ 'tutorial/bhsisyarat' == request()->path() || 'tutorial/musik' == request()->path() || 'tutorial/tari' == request()->path() || 'tutorial/gambar' == request()->path() ? 'active' : '' }}"

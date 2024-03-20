@@ -7,12 +7,10 @@
             <div class="row justify-content-between">
                 <div class="col-lg-5">
                     <div class="intro-excerpt">
-                        <h1>Contact Us</h1>
+                        <h1>Our Menu</h1>
                         <ol class="breadcrumb justify-content-center text-uppercase">
                             <li class="breadcrumb-item text-decoration-none"><a href="/">Home</a></li>
-                            <li class="breadcrumb-item"><a href="/about">About</a></li>
                             <li class="breadcrumb-item"><a href="/menu">Menu</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
                         </ol>
                     </div>
                 </div>
@@ -56,62 +54,56 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                     <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="menu-item card rounded">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <div class="menu-item-content mx-auto">
-                                        <div
-                                            class="menu-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                            <div class="menu-item-caption-content text-center text-white">
-                                                <a href="" class="btn" data-bs-toggle="modal"
-                                                    data-bs-target="#menuModal"><i class="bi bi-eye-fill"></i></a>&nbsp
-                                                <a href="" class="btn"><i class="bi bi-cart-fill"></i></a>
+                        @foreach ($menus as $menu)
+                            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="menu-item card rounded">
+                                    <div class="position-relative bg-light overflow-hidden">
+                                        <div class="menu-item-content mx-auto">
+                                            <div
+                                                class="menu-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                                <div class="menu-item-caption-content text-center text-white">
+                                                    <a href="" class="btn" data-bs-toggle="modal" data-bs-target="#menuModal{{ $menu->id }}"><i class="bi bi-eye-fill"></i></a>&nbsp
+                                                    <a href="{{ route('addmenu.to.cart', $menu->id) }}" class="btn"><i
+                                                            class="bi bi-cart-fill"></i></a>
+                                                </div>
                                             </div>
+                                            <img class="img-card-top img-fluid" style="min-height: 250px"
+                                                src="{{ asset('/storage/gambar/' . $menu->gambar) }}" alt="...">
                                         </div>
-                                        <img class="img-card-top img-fluid"
-                                            src="{{ asset('assets/images/about/about-2.png') }}" alt="...">
-                                    </div>
-                                    <div class="card-body text-center p-4">
-                                        <a href=""
-                                            class="card-text d-block h3 mb-2 text-decoration-none"><b>Cimol</b></a>
-                                        <span class="card-text me-1">Rp 10.000,00</span>
+                                        <div class="card-body text-center p-4">
+                                            <a href=""
+                                                class="card-text d-block h3 mb-2 text-decoration-none"><b>{{ $menu->nama_item }}</b></a>
+                                            <span class="card-text me-1">Rp {{ $menu->harga }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div id="tab-2" class="tab-pane fade show p-0">
                     <div class="card mb-3 menu-list" style="max-width: 100%;">
                         <div class="row g-0">
-                            <div class="col-md-4">
-                                <a href="" class="menu-thumbnail">
-                                    <img src="{{ asset('assets/images/about/about-1.png') }}"
-                                        class="img-fluid rounded-start w-100" alt="...">
-                                </a>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-4">
-                                    <a href=""
-                                        class="card-title d-block h1 mb-2 text-decoration-none"><b>Cimol</b></a>
-                                    <strong class="menu-price me-1">Rp 10.000,00</strong> <br><br>
-                                    <h5 class="text-body">Deskripsi :</h5>
-                                    <p class="card-text text-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                        Excepturi, repellat esse! Architecto reprehenderit aperiam eaque dolorem dolore
-                                        quisquam repellat aliquid voluptatibus expedita aut adipisci amet veniam laudantium
-                                        sit hic inventore nobis, possimus repellendus illo voluptas blanditiis. Libero eaque
-                                        ipsum esse exercitationem, ullam expedita reiciendis laudantium. Iusto, distinctio
-                                        harum! Cupiditate aspernatur consequuntur iure eum quae adipisci quia enim sapiente
-                                        est nobis dicta laboriosam voluptatum ab sed magni officiis temporibus mollitia
-                                        dolores quaerat, ducimus esse quo nemo error. Ea similique totam, sed nihil
-                                        dignissimos id fuga sunt illo nostrum est praesentium tenetur enim doloremque cum
-                                        cupiditate numquam ipsam soluta natus rem earum.
-                                    </p>
+                            @foreach ($menus as $menu)
+                                <div class="col-md-4">
+                                    <a href="" class="menu-thumbnail">
+                                        <img src="{{ asset('/storage/gambar/' . $menu->gambar) }}"
+                                            class="img-fluid rounded-start w-100" alt="...">
+                                    </a>
                                 </div>
-                            </div>
-                            <span class="icon-chart">
-                                <i class="bi bi-cart-fill"></i>
-                            </span>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4">
+                                        <a href=""
+                                            class="card-title d-block h1 mb-2 text-decoration-none"><b>{{ $menu->nama_item }}</b></a>
+                                        <strong class="menu-price me-1">Rp {{ $menu->harga }}</strong> <br><br>
+                                        <h5 class="text-body">Deskripsi :</h5>
+                                        <p class="card-text text-body"> {{ $menu->deskripsi }}</p>
+                                    </div>
+                                </div>
+                                <span class="icon-chart">
+                                    <a href="{{ route('addmenu.to.cart', $menu->id) }}"><i class="bi bi-cart-fill"></i></a>
+                                </span>
+                            @endforeach
                         </div>
                     </div>
                     <div class="overflow-hidden">
@@ -122,10 +114,11 @@
         </div>
     </div>
     {{-- menu end --}}
-@endsection
+
 
 {{-- menu-item-modals --}}
-<div class="menu-modal modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModal" aria-hidden="true">
+@foreach ($menus as $menu)
+<div class="menu-modal modal fade" id="menuModal{{ $menu->id }}" tabindex="-1" aria-labelledby="menuModal{{ $menu->id }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content" style="background: var(--light)">
             <div class="modal-header border-0">
@@ -135,19 +128,15 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
-                            <img src="{{ asset('assets/images/about/about-1.png') }}" alt=""
+                            <img src="{{ asset('/storage/gambar/' . $menu->gambar) }}" alt=""
                                 class="img-fluid rounded mb-5" width="200px">
                             <div class="text-center p-4">
                                 <a href="" class="d-block h3 mb-2 text-decoration-none"><b>Cimol</b></a>
-                                <span class="me-1">Rp 10.000,00</span>
+                                <span class="me-1">Rp {{ $menu->harga}}</span>
                             </div>
                             <h5>Deskripsi :</h5>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-                                vitae neque cumque fuga rerum iste itaque rem sapiente harum, consectetur ea sequi
-                                inventore aliquam labore ab, maiores consequuntur quas similique quod cupiditate aut
-                                facilis natus delectus! Consequuntur reprehenderit nemo porro ab veniam delectus
-                                cupiditate, sit adipisci, ex alias eos error.</p>
-                            <a href=""
+                            <p class="mb-4">{{ $menu->deskripsi }}</p>
+                            <a href="{{ route('addmenu.to.cart', $menu->id )}}"
                                 class="btn btn-outline-primary align-items-center justify-content-center"><i
                                     class="bi bi-cart-fill"></i>Add to Chart</a>
                         </div>
@@ -157,7 +146,7 @@
         </div>
     </div>
 </div>
+@endforeach
 {{-- menu-item-modals --}}
 
-@section('scripts')
-@endsection
+{{-- @endsection --}}
