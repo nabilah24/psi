@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {{ 'home' == request()->path() ? 'active' : '' }}"
+                        <a class="nav-link {{ '/' == request()->path() ? 'active' : '' }}"
                             href="/">HOME<span></span></a>
                     </li>
                     <li class="nav-item">

@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required|max:20',
-            'username' => 'required|min:6|max:20|unique:users',
+            'username' => 'required|max:20|unique:users',
             'email' => 'required|email|unique:users',
             'phone' => 'required|string|min:12|max:13',
             'password' => 'required|min:6|max:8'
@@ -64,7 +64,7 @@ class UserController extends Controller
 
         if(Auth::attempt($infologin)){
             if(Auth::user()->role =='admin'){
-                return redirect('admin.menu');
+                return redirect('user.dasboard');
             } elseif (Auth::user()->role == 'user'){
                 return redirect('home');
             }
